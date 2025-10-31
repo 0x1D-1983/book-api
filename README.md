@@ -1,6 +1,8 @@
 # BookApi
 
 A simple .NET 8 Web API for managing a book collection with PostgreSQL/TimescaleDB as the database.
+This API was designed to work seamlessly as a backend for the [Book API MCP Server](https://github.com/0x1D-1983/book-api-mcp-server), which provides a standardized Model Context Protocol (MCP) interface for advanced clients and AI assistants. Integrating with the MCP server enables intelligent tools to manage and query your book collection via standardized protocol calls.
+
 
 ## Features
 
