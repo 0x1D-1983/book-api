@@ -1,0 +1,47 @@
+@BookApi_HostAddress = http://localhost:5288
+@ContentType = application/json
+
+### Get all books
+GET {{BookApi_HostAddress}}/api/books
+Accept: {{ContentType}}
+
+###
+
+### Get book by ID
+GET {{BookApi_HostAddress}}/api/books/1
+Accept: {{ContentType}}
+
+###
+
+### Create a new book
+POST {{BookApi_HostAddress}}/api/books
+Content-Type: {{ContentType}}
+
+{
+  "title": "The Hitchhiker's Guide to the Galaxy",
+  "author": "Douglas Adams",
+  "isbn": "978-0345391803",
+  "publishedDate": "1979-10-12T00:00:00Z"
+}
+
+###
+
+### Update a book
+PUT {{BookApi_HostAddress}}/api/books/1
+Content-Type: {{ContentType}}
+
+{
+  "id": 1,
+  "title": "Updated Book Title",
+  "author": "Updated Author",
+  "isbn": "978-0345391803",
+  "publishedDate": "1979-10-12T00:00:00Z"
+}
+
+###
+
+### Delete a book
+DELETE {{BookApi_HostAddress}}/api/books/1
+Accept: {{ContentType}}
+
+###
