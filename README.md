@@ -21,15 +21,15 @@ Before running the application, you need to set up the database in pgAdmin:
 
 1. Open pgAdmin and connect to your PostgreSQL instance
 2. Run the SQL script in `database_setup.sql`:
-   - First, execute the `CREATE DATABASE bookapi;` command
-   - Then connect to the `bookapi` database
+   - First, execute the `CREATE DATABASE booksdb;` command
+   - Then connect to the `booksdb` database
    - Execute the rest of the script to create the table and sample data
 
 ### 2. Connection String
 
 The connection string is already configured in `appsettings.json`:
 ```
-Host=localhost;Port=5432;Database=bookapi;Username=admin;Password=admin123
+Host=localhost;Port=5432;Database=booksdb;Username=admin;Password=admin123
 ```
 
 Make sure this matches your PostgreSQL credentials.

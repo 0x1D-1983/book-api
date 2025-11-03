@@ -42,11 +42,21 @@ public class ApplicationDbContext : DbContext
             
             entity.Property(e => e.PublishedDate)
                 .HasColumnName("published_date")
-                .IsRequired();
+                .IsRequired()
+                .HasConversion(
+                    v => v.Kind == DateTimeKind.Unspecified 
+                        ? DateTime.SpecifyKind(v, DateTimeKind.Utc) 
+                        : v.ToUniversalTime(),
+                    v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
             
             entity.Property(e => e.CreatedAt)
                 .HasColumnName("created_at")
-                .IsRequired();
+                .IsRequired()
+                .HasConversion(
+                    v => v.Kind == DateTimeKind.Unspecified 
+                        ? DateTime.SpecifyKind(v, DateTimeKind.Utc) 
+                        : v.ToUniversalTime(),
+                    v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
         });
     }
 }
