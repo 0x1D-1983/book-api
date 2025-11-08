@@ -11,6 +11,10 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5288);
+});
 
 try
 {

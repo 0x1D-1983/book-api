@@ -22,7 +22,9 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Optionally set environment variables (uncomment and set as needed)
-# ENV ASPNETCORE_URLS=http://+:8080
+ENV ConnectionStrings__DefaultConnection=${DB_CONN_STR}
+
+EXPOSE 5288
 
 # Set the entrypoint to run the API on container startup
 ENTRYPOINT ["dotnet", "BookApi.dll"]
